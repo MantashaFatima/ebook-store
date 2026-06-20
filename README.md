@@ -1,8 +1,10 @@
 # StudyBooks - E-Book Marketplace
 
-A responsive E-Book Marketplace web application built using React.js and Tailwind CSS.
+StudyBooks is a responsive E-Book Marketplace web application built using React.js and Tailwind CSS. The platform allows users to discover, explore, and purchase educational e-books for competitive exam preparation.
 
-The application allows users to browse e-books, search books, view detailed information, purchase books, and access their personal library.
+## Live Demo
+
+https://ebook-store-app.netlify.app/
 
 ---
 
@@ -18,16 +20,15 @@ The application allows users to browse e-books, search books, view detailed info
 
 ### E-Book Listing Page
 - Search Books
-- Filter By Exam Category, Price, Language, Subject
-- Sort By Price
+- Sort By Price (Low to High / High to Low)
 - Grid / List View Toggle
 - Pagination
 - Responsive Layout
 
 ### Book Detail Page
-- Book Information
+- Book Cover & Information
 - Author Details
-- Book Preview
+- Book Preview Section
 - Ratings & Reviews
 - Related Books
 - Buy Now Option
@@ -37,14 +38,13 @@ The application allows users to browse e-books, search books, view detailed info
 - Coupon Code Section
 - Payment Method Selection
 - Order Summary
-- Purchase Confirmation
+- Purchase Confirmation Flow
 
 ### My Library
-- Purchased Books
+- Purchased Books Collection
 - Search Library
 - Continue Reading
 - Download Books
-- Persisted purchase library using browser storage
 
 ---
 
@@ -67,6 +67,7 @@ src/
 │   ├── Navbar.jsx
 │   ├── Footer.jsx
 │   ├── Hero.jsx
+│   ├── CTA.jsx
 │   ├── BookCard.jsx
 │   ├── FilterSidebar.jsx
 │   └── CategoryCard.jsx
@@ -95,10 +96,10 @@ Clone the repository:
 git clone <repository-url>
 ```
 
-Move into project directory:
+Navigate to the project folder:
 
 ```bash
-cd studybooks
+cd ebook-store
 ```
 
 Install dependencies:
@@ -107,13 +108,13 @@ Install dependencies:
 npm install
 ```
 
-Run development server:
+Start the development server:
 
 ```bash
 npm start
 ```
 
-Application will run at:
+The application will run on:
 
 ```bash
 http://localhost:3000
@@ -121,19 +122,19 @@ http://localhost:3000
 
 ---
 
-## Build For Production
+## Production Build
 
 ```bash
 npm run build
 ```
 
-The optimized production build will be generated inside the build folder.
+The optimized production build will be generated inside the `build` folder.
 
 ---
 
 ## Responsive Design
 
-The application is fully responsive and works across:
+The application is fully responsive and optimized for:
 
 - Desktop
 - Tablet
@@ -141,27 +142,29 @@ The application is fully responsive and works across:
 
 ---
 
-## Future Enhancements
+## Future Improvements
 
 - Backend Integration
 - User Authentication
-- Wishlist Functionality
+- Wishlist Feature
 - Payment Gateway Integration
 - Real E-Book Reader
-- API Based Search & Filtering
+- API-Based Search & Filtering
 
 ---
 
 ## Author
 
-Mantasha Fatima
+**Mantasha Fatima**
 
 Software Developer
 
 React.js | Next.js | React Native | JavaScript
 
+GitHub: https://github.com/<https://github.com/MantashaFatima>
+
 ---
 
 ## License
 
-This project is created for UI Engineering Assignment evaluation purposes.
+This project was developed as part of a UI Engineering Assignment and is intended for evaluation purposes.
