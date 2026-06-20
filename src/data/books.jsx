@@ -1,0 +1,186 @@
+import upsc from "../assets/images/UPSC-Book.jpg";
+import upsc2 from "../assets/images/upsc2.jpg";
+import upsc3 from "../assets/images/upsc3.jpg";
+import sscBook from "../assets/images/SSC-Book.jpg";
+import english from "../assets/images/english.jpg";
+import history from "../assets/images/history.jpg";
+import history2 from "../assets/images/history2.jpg";
+import banking from "../assets/images/banking.jpg";
+import mathematics from "../assets/images/mathematics.jpg";
+import mathematics2 from "../assets/images/mathematics2.jpg";
+import science from "../assets/images/science.jpg";
+import science2 from "../assets/images/science2.jpg";
+import computer from "../assets/images/computer.jpg";
+import computer2 from "../assets/images/computer2.png";
+import political from "../assets/images/Political.png";
+
+const books = [
+  {
+    id: 1,
+    title: "UPSC Master Guide 2026",
+    author: "Dr. Rakesh Sharma",
+    category: "UPSC",
+    subject: "General Studies",
+    language: "English",
+    rating: 4.9,
+    price: 499,
+    image: upsc,
+  },
+  {
+    id: 2,
+    title: "Indian Polity",
+    author: "M. Laxmikanth",
+    category: "UPSC",
+    subject: "Polity",
+    language: "English",
+    rating: 4.9,
+    price: 699,
+    image: history,
+  },
+  {
+    id: 3,
+    title: "Modern Indian History",
+    author: "Bipan Chandra",
+    category: "UPSC",
+    subject: "History",
+    language: "English",
+    rating: 4.8,
+    price: 599,
+    image: history2,
+  },
+  {
+    id: 4,
+    title: "UPSC Current Affairs 2026",
+    author: "Exam Master",
+    category: "UPSC",
+    subject: "Current Affairs",
+    language: "English",
+    rating: 4.7,
+    price: 529,
+    image: upsc2,
+  },
+  {
+    id: 5,
+    title: "UPSC Optional Strategy",
+    author: "Gaurav Sharma",
+    category: "UPSC",
+    subject: "Strategy",
+    language: "English",
+    rating: 4.6,
+    price: 579,
+    image: upsc3,
+  },
+  {
+    id: 6,
+    title: "A Modern Approach To Verbal & Non-Verbal Reasoning",
+    author: "R.S. Aggarwal",
+    category: "SSC",
+    subject: "Reasoning",
+    language: "English",
+    rating: 4.8,
+    price: 399,
+    image: sscBook,
+  },
+  {
+    id: 7,
+    title: "Quantitative Aptitude",
+    author: "R.S. Aggarwal",
+    category: "Banking",
+    subject: "Mathematics",
+    language: "English",
+    rating: 4.9,
+    price: 549,
+    image: banking,
+  },
+  
+  {
+    id: 10,
+    title: "Objective General English",
+    author: "S.P. Bakshi",
+    category: "SSC",
+    subject: "English",
+    language: "English",
+    rating: 4.8,
+    price: 499,
+    image: english,
+  },
+  {
+    id: 11,
+    title: "Mathematics Essentials",
+    author: "Dr. Neha Kapoor",
+    category: "Mathematics",
+    subject: "Mathematics",
+    language: "English",
+    rating: 4.7,
+    price: 459,
+    image: mathematics,
+  },
+  {
+    id: 12,
+    title: "Mathematics Practice Guide",
+    author: "R. K. Verma",
+    category: "Mathematics",
+    subject: "Mathematics",
+    language: "English",
+    rating: 4.6,
+    price: 429,
+    image: mathematics2,
+  },
+  {
+    id: 13,
+    title: "Science Explorer",
+    author: "Dr. S. Mehta",
+    category: "Science",
+    subject: "Science",
+    language: "English",
+    rating: 4.8,
+    price: 489,
+    image: science,
+  },
+  {
+    id: 14,
+    title: "Science Lab Companion",
+    author: "A. Singh",
+    category: "Science",
+    subject: "Science",
+    language: "English",
+    rating: 4.7,
+    price: 469,
+    image: science2,
+  },
+  {
+    id: 15,
+    title: "Computer Science Essentials",
+    author: "Nidhi Verma",
+    category: "Computer",
+    subject: "Computer Science",
+    language: "English",
+    rating: 4.7,
+    price: 439,
+    image: computer,
+  },
+  {
+    id: 16,
+    title: "Advanced Computer Concepts",
+    author: "Rahul Singh",
+    category: "Computer",
+    subject: "Computer Science",
+    language: "English",
+    rating: 4.6,
+    price: 459,
+    image: computer2,
+  },
+  {
+    id: 17,
+    title: "Political Science for Exams",
+    author: "Priya Gupta",
+    category: "Political",
+    subject: "Political Science",
+    language: "English",
+    rating: 4.8,
+    price: 479,
+    image: political,
+  },
+];
+
+export default books;
