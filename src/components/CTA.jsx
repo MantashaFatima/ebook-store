@@ -1,11 +1,8 @@
-import React from 'react'
+import React from "react";
 
-export default function 
-() {
+function CTA() {
   return (
-    <div>
-        <section className="py-20">
-
+    <section className="py-20">
       <div className="max-w-6xl mx-auto px-6">
 
         <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl p-12 text-center text-white">
@@ -26,7 +23,7 @@ export default function
 
       </div>
     </section>
-        
-    </div>
-  )
+  );
 }
+
+export default CTA;
