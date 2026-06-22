@@ -23,6 +23,37 @@ export default function Home() {
 
       <Hero />
 
+      {/* Stats Section */}
+      <section className="px-6 py-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-gradient-to-r from-green-800 to-green-700 rounded-3xl p-12 text-white">
+            <div className="grid md:grid-cols-4 gap-8">
+              
+              <div className="border-r border-green-600 pr-8">
+                <h3 className="text-5xl font-bold mb-2">74K+</h3>
+                <p className="text-green-100 text-lg">Aspirants prepping</p>
+              </div>
+
+              <div className="border-r border-green-600 pr-8">
+                <h3 className="text-5xl font-bold mb-2">1,840</h3>
+                <p className="text-green-100 text-lg">Weekly mock attempts</p>
+              </div>
+
+              <div className="border-r border-green-600 pr-8">
+                <h3 className="text-5xl font-bold mb-2">120+</h3>
+                <p className="text-green-100 text-lg">Curated E-Books</p>
+              </div>
+
+              <div>
+                <h3 className="text-5xl font-bold mb-2">310+</h3>
+                <p className="text-green-100 text-lg">Topics covered</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Search Bar */}
       <section className="py-12 bg-slate-100">
         <div className="max-w-4xl mx-auto px-6">

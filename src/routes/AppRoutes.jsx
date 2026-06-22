@@ -5,6 +5,7 @@ import BookListing from "../pages/BookListing";
 import BookDetail from "../pages/BookDetail";
 import Checkout from "../pages/Checkout";
 import Library from "../pages/Library";
+import BookReader from "../pages/BookReader";
 
 export default function AppRoutes() {
   return (
@@ -15,6 +16,7 @@ export default function AppRoutes() {
         <Route path="/book/:id" element={<BookDetail />} />
         <Route path="/checkout/:id" element={<Checkout />} />
         <Route path="/library" element={<Library />} />
+        <Route path="/reader/:id" element={<BookReader />} />
       </Routes>
     </BrowserRouter>
   );

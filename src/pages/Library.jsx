@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import books from "../data/books";
 
 export default function Library() {
+  const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const [purchasedBooks, setPurchasedBooks] = useState([]);
 
@@ -58,7 +60,8 @@ export default function Library() {
             {filteredBooks.map((book) => (
               <div
                 key={book.id}
-                className="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition"
+                onClick={() => navigate(`/reader/${book.id}`)}
+                className="bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition cursor-pointer"
               >
                 <img
                   src={book.image}
@@ -76,7 +79,10 @@ export default function Library() {
 
                   <div className="mt-2 text-yellow-500">⭐ {book.rating}</div>
 
-                  <button className="w-full mt-4 bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700">
+                  <button
+                    onClick={() => navigate(`/reader/${book.id}`)}
+                    className="w-full mt-4 bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700"
+                  >
                     Continue Reading
                   </button>
 
