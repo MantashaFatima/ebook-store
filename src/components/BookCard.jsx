@@ -10,7 +10,7 @@ return ( <div className="group bg-white rounded-3xl overflow-hidden border borde
     <img
       src={book.image}
       alt={book.title}
-      className="h-80 w-full object-cover group-hover:scale-105 transition duration-500"
+      className="h-48 sm:h-64 md:h-72 lg:h-80 w-full object-cover group-hover:scale-105 transition duration-500"
     />
 
     <span className="absolute top-4 left-4 bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full">
@@ -28,7 +28,7 @@ return ( <div className="group bg-white rounded-3xl overflow-hidden border borde
       </span>
     </div>
 
-    <h3 className="font-bold text-xl text-slate-900 line-clamp-2">
+    <h3 className="font-bold text-lg md:text-xl text-slate-900 line-clamp-2">
       {book.title}
     </h3>
 
@@ -38,13 +38,13 @@ return ( <div className="group bg-white rounded-3xl overflow-hidden border borde
 
     <div className="flex items-center justify-between mt-6">
 
-      <span className="text-2xl font-bold text-slate-900">
+      <span className="text-xl md:text-2xl font-bold text-slate-900">
         ₹{book.price}
       </span>
 
       <Link
         to={`/book/${book.id}`}
-        className="bg-slate-900 text-white px-5 py-2.5 rounded-full font-medium hover:bg-slate-800 transition"
+        className="bg-slate-900 text-white px-4 py-2 rounded-full md:px-5 md:py-2.5 font-medium hover:bg-slate-800 transition"
       >
         View Details
       </Link>

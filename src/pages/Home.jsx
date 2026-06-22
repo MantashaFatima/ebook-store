@@ -24,7 +24,7 @@ export default function Home() {
       <Hero />
 
       {/* Stats Section */}
-      <section className="px-6 py-16">
+      {/* <section className="px-6 py-16">
         <div className="max-w-7xl mx-auto">
           <div className="bg-gradient-to-r from-green-800 to-green-700 rounded-3xl p-12 text-white">
             <div className="grid md:grid-cols-4 gap-8">
@@ -52,25 +52,29 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Search Bar */}
-      <section className="py-12 bg-slate-100">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="py-8 sm:py-12 bg-slate-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
 
-          <div className="bg-white p-4 rounded-2xl shadow flex gap-4">
+          <div className="bg-white p-4 sm:p-4 rounded-2xl shadow">
 
-            <input
-              type="text"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search books, author or category..."
-              className="flex-1 outline-none"
-            />
+            <form className="flex flex-col sm:flex-row gap-3 items-center" onSubmit={(e) => e.preventDefault()}>
 
-            <button className="bg-indigo-600 text-white px-8 py-3 rounded-xl">
-              Search
-            </button>
+              <input
+                type="text"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Search books, author or category..."
+                className="w-full sm:flex-1 outline-none px-4 py-3 rounded-lg border border-gray-200"
+              />
+
+              <button type="submit" className="w-full sm:w-auto bg-indigo-600 text-white px-6 py-3 rounded-xl">
+                Search
+              </button>
+
+            </form>
 
           </div>
 

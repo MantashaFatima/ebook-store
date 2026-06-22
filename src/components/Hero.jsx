@@ -16,7 +16,7 @@ export default function Hero() {
               India's #1 Exam E-Book Platform
             </span>
 
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight mt-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mt-6">
               Crack Your Dream Exam
               <br />
               With Premium E-Books
@@ -88,7 +88,7 @@ export default function Hero() {
             <img
               src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1200"
               alt="Book Collection"
-              className="rounded-3xl shadow-2xl h-[500px] w-full object-cover"
+              className="rounded-3xl shadow-2xl h-48 sm:h-64 md:h-96 lg:h-[500px] w-full object-cover"
             />
 
           </div>
