@@ -251,7 +251,7 @@ export default function Checkout() {
 
                   <button
                     onClick={() => setIsPurchased(true)}
-                    className="mt-8 btn-primary text-slate-950"
+                    className="mt-8 w-full btn-primary text-slate-950"
                   >
                     Complete Purchase
                   </button>
