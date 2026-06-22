@@ -39,7 +39,7 @@ export default function FilterSidebar({
   ];
 
   return (
-    <aside className="premium-card p-6 sticky top-24">
+    <aside className="premium-card p-6 md:sticky md:top-24">
       <div className="flex items-center justify-between mb-6">
         <div>
           <h2 className="text-lg font-bold text-slate-900">Filters</h2>

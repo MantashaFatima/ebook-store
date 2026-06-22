@@ -75,7 +75,7 @@ export default function BookDetail() {
                 <img
                   src={book.image}
                   alt={book.title}
-                  className="w-full h-[400px] lg:h-[520px] object-cover"
+                  className="w-full h-[400px] lg:h-[520px] object-contain bg-cream-50"
                 />
               </div>
 
@@ -86,7 +86,7 @@ export default function BookDetail() {
                     <img
                       src={book.image}
                       alt=""
-                      className="h-24 object-cover w-full"
+                      className="h-24 w-full object-contain bg-cream-50"
                     />
                   </div>
                 ))}

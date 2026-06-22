@@ -138,7 +138,7 @@ export default function BookListing() {
 
             <div className="md:col-span-3">
               <div className="flex flex-wrap gap-3 mb-6">
-                <div className="relative flex-1 min-w-[200px]">
+                <div className="relative flex-1 min-w-0">
                   <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
                   <input
                     value={search}

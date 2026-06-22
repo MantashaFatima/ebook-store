@@ -92,7 +92,7 @@ export default function Library() {
                     <img
                       src={book.image}
                       alt={book.title}
-                      className="h-52 w-full object-cover group-hover:scale-105 transition duration-500"
+                      className="h-52 w-full object-contain bg-cream-50 group-hover:scale-105 transition duration-500"
                     />
                     <span className="absolute top-3 left-3 badge-green">
                       {book.category}

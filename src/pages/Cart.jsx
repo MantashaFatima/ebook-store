@@ -98,7 +98,7 @@ export default function Cart() {
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="h-28 sm:h-32 w-full rounded-2xl object-cover shadow-sm"
+                        className="h-28 sm:h-32 w-full rounded-2xl object-contain bg-cream-50 shadow-sm"
                       />
 
                       <div className="flex flex-col justify-between gap-4">

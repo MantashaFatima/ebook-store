@@ -12,7 +12,7 @@ export default function BookCard({ book }) {
         <img
           src={book.image}
           alt={book.title}
-          className="h-52 sm:h-60 md:h-64 w-full object-cover group-hover:scale-105 transition duration-500"
+          className="h-52 sm:h-60 md:h-64 w-full object-contain bg-cream-50 group-hover:scale-105 transition duration-500"
         />
         <span className="absolute top-4 left-4 badge-green shadow-sm">
           {book.category}
