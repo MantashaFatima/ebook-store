@@ -26,11 +26,11 @@ export default function BookReader() {
   }
 
   return (
-    <div className="h-screen flex flex-col bg-[#EAE4D8]">
+    <div className="h-screen flex flex-col bg-cream-200">
 
       {/* TOP BAR */}
 
-      <div className="h-16 bg-white border-b flex items-center justify-between px-4 sm:px-6">
+      <div className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-4 sm:px-6">
 
         <div className="flex items-center gap-4">
 
@@ -70,7 +70,7 @@ export default function BookReader() {
 
         <div className="flex items-center gap-3">
 
-          <button className="hidden sm:inline bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm">
+          <button className="hidden sm:inline bg-forest-50 text-forest-500 px-4 py-2 rounded-full text-sm font-medium">
             ◯ Protected
           </button>
 
@@ -110,14 +110,14 @@ export default function BookReader() {
 
           <div className="space-y-3 text-base text-gray-700">
 
-            <p className="hover:text-blue-600 cursor-pointer">Definitions</p>
-            <p className="hover:text-blue-600 cursor-pointer">Successive percentages</p>
-            <p className="hover:text-blue-600 cursor-pointer">Profit & loss basics</p>
-            <p className="hover:text-blue-600 cursor-pointer">Discount chains</p>
-            <p className="hover:text-blue-600 cursor-pointer">Compound problems</p>
-            <p className="hover:text-blue-600 cursor-pointer">Practice — easy</p>
-            <p className="hover:text-blue-600 cursor-pointer">Practice — hard</p>
-            <p className="hover:text-blue-600 cursor-pointer">Worked solutions</p>
+            <p className="hover:text-forest-500 cursor-pointer">Definitions</p>
+            <p className="hover:text-forest-500 cursor-pointer">Successive percentages</p>
+            <p className="hover:text-forest-500 cursor-pointer">Profit & loss basics</p>
+            <p className="hover:text-forest-500 cursor-pointer">Discount chains</p>
+            <p className="hover:text-forest-500 cursor-pointer">Compound problems</p>
+            <p className="hover:text-forest-500 cursor-pointer">Practice — easy</p>
+            <p className="hover:text-forest-500 cursor-pointer">Practice — hard</p>
+            <p className="hover:text-forest-500 cursor-pointer">Worked solutions</p>
 
           </div>
 
@@ -136,9 +136,9 @@ export default function BookReader() {
 
         {/* CENTER READER */}
 
-        <div className="flex-1 overflow-y-auto bg-[#EAE4D8] p-4 sm:p-6 md:p-10">
+        <div className="flex-1 overflow-y-auto bg-cream-200 p-4 sm:p-6 md:p-10">
 
-          <div className="max-w-3xl mx-auto bg-white p-6 sm:p-8 md:p-12 shadow-xl rounded-lg">
+          <div className="max-w-3xl mx-auto bg-white p-6 sm:p-8 md:p-12 shadow-premium rounded-2xl">
 
             <div className="text-center text-gray-400 uppercase tracking-[4px] text-sm mb-4">
               {book.category}
@@ -161,7 +161,7 @@ export default function BookReader() {
                 When a quantity is changed by x% and then by y%, the net change is given by the formula:
               </p>
 
-              <div className="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
+              <div className="bg-forest-50 border-l-4 border-forest-400 p-4 my-6 rounded-r-xl">
                 <p className="font-mono text-center text-lg">
                   Net change = x + y + (xy / 100)
                 </p>
@@ -279,9 +279,9 @@ export default function BookReader() {
             </div>
 
             <div className="space-y-3 text-base text-gray-700">
-              <p className="hover:text-blue-600 cursor-pointer">Definitions</p>
-              <p className="hover:text-blue-600 cursor-pointer">Successive percentages</p>
-              <p className="hover:text-blue-600 cursor-pointer">Profit & loss basics</p>
+              <p className="hover:text-forest-500 cursor-pointer">Definitions</p>
+              <p className="hover:text-forest-500 cursor-pointer">Successive percentages</p>
+              <p className="hover:text-forest-500 cursor-pointer">Profit & loss basics</p>
             </div>
           </div>
         </div>

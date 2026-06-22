@@ -9,258 +9,113 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0F172A] text-white mt-24">
-
-      {/* Top */}
-      <div className="max-w-7xl mx-auto px-6 py-20">
-
+    <footer className="bg-forest-700 text-white mt-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-20">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12">
 
-          {/* Brand */}
           <div>
-
             <div className="flex items-center gap-3">
-
-              <div className="w-12 h-12 rounded-xl bg-green-700 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-2xl bg-forest-400 flex items-center justify-center shadow-lg">
                 <FaBookOpen />
               </div>
-
-              <h2 className="text-3xl font-bold">
-                StudyBooks
-              </h2>
-
+              <h2 className="text-2xl font-bold">StudyBooks</h2>
             </div>
 
-            <p className="text-slate-400 mt-6 leading-8">
-              India's trusted digital learning platform for
-              UPSC, SSC, Banking, Railway and competitive
-              examination preparation.
+            <p className="text-forest-100/70 mt-6 leading-7 text-sm">
+              India&apos;s trusted digital learning platform for UPSC, SSC,
+              Banking, Railway and competitive examination preparation.
             </p>
 
-            <div className="flex gap-4 mt-8">
-
-              <div className="w-10 h-10 rounded-full bg-slate-800 hover:bg-green-700 flex items-center justify-center cursor-pointer transition">
-                <FaFacebookF />
-              </div>
-
-              <div className="w-10 h-10 rounded-full bg-slate-800 hover:bg-green-700 flex items-center justify-center cursor-pointer transition">
-                <FaInstagram />
-              </div>
-
-              <div className="w-10 h-10 rounded-full bg-slate-800 hover:bg-green-700 flex items-center justify-center cursor-pointer transition">
-                <FaLinkedinIn />
-              </div>
-
-              <div className="w-10 h-10 rounded-full bg-slate-800 hover:bg-green-700 flex items-center justify-center cursor-pointer transition">
-                <FaYoutube />
-              </div>
-
+            <div className="flex gap-3 mt-8">
+              {[FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube].map((Icon, i) => (
+                <div
+                  key={i}
+                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-forest-400 flex items-center justify-center cursor-pointer transition"
+                >
+                  <Icon size={14} />
+                </div>
+              ))}
             </div>
-
           </div>
 
-          {/* Quick Links */}
           <div>
-
-            <h3 className="text-xl font-semibold mb-6">
-              Quick Links
-            </h3>
-
-            <ul className="space-y-4 text-slate-400">
-
-              <li>
-                <Link
-                  to="/"
-                  className="hover:text-green-500 transition"
-                >
-                  Home
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/books"
-                  className="hover:text-green-500 transition"
-                >
-                  E-Books
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/library"
-                  className="hover:text-green-500 transition"
-                >
-                  My Library
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/cart"
-                  className="hover:text-green-500 transition"
-                >
-                  Cart
-                </Link>
-              </li>
-
+            <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
+            <ul className="space-y-3 text-forest-100/70 text-sm">
+              {[
+                { to: "/", label: "Home" },
+                { to: "/books", label: "E-Books" },
+                { to: "/library", label: "My Library" },
+                { to: "/cart", label: "Cart" },
+              ].map((item) => (
+                <li key={item.to}>
+                  <Link to={item.to} className="hover:text-white transition">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
-
           </div>
 
-          {/* Categories */}
           <div>
-
-            <h3 className="text-xl font-semibold mb-6">
-              Categories
-            </h3>
-
-            <ul className="space-y-4 text-slate-400">
-
-              <li className="hover:text-green-500 cursor-pointer transition">
-                UPSC
-              </li>
-
-              <li className="hover:text-green-500 cursor-pointer transition">
-                SSC
-              </li>
-
-              <li className="hover:text-green-500 cursor-pointer transition">
-                Banking
-              </li>
-
-              <li className="hover:text-green-500 cursor-pointer transition">
-                Railway
-              </li>
-
-              <li className="hover:text-green-500 cursor-pointer transition">
-                State PCS
-              </li>
-
-              <li className="hover:text-green-500 cursor-pointer transition">
-                Defence
-              </li>
-
+            <h3 className="text-lg font-semibold mb-6">Categories</h3>
+            <ul className="space-y-3 text-forest-100/70 text-sm">
+              {["UPSC", "SSC", "Banking", "Railway", "State PCS", "Defence"].map((cat) => (
+                <li key={cat} className="hover:text-white cursor-pointer transition">
+                  {cat}
+                </li>
+              ))}
             </ul>
-
           </div>
 
-          {/* Newsletter */}
           <div>
-
-            <h3 className="text-xl font-semibold mb-6">
-              Stay Updated
-            </h3>
-
-            <p className="text-slate-400 mb-5">
-              Subscribe to get latest e-books,
-              discounts and exam preparation updates.
+            <h3 className="text-lg font-semibold mb-6">Stay Updated</h3>
+            <p className="text-forest-100/70 text-sm mb-5 leading-relaxed">
+              Subscribe for latest e-books, discounts and exam updates.
             </p>
-
             <div className="space-y-3">
-
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="w-full px-4 py-4 rounded-2xl bg-slate-800 border border-slate-700 focus:outline-none focus:border-green-600"
+                className="w-full px-4 py-3.5 rounded-2xl bg-white/10 border border-white/10 text-white placeholder:text-forest-100/50 focus:outline-none focus:border-forest-300 transition text-sm"
               />
-
-              <button className="w-full bg-green-700 hover:bg-green-800 py-4 rounded-2xl font-semibold transition">
+              <button className="w-full bg-forest-400 hover:bg-forest-300 py-3.5 rounded-2xl font-semibold transition text-sm">
                 Subscribe Now
               </button>
-
             </div>
-
           </div>
-
         </div>
-
       </div>
 
-      {/* Stats Section */}
-
-      <div className="border-t border-slate-800">
-
-        <div className="max-w-7xl mx-auto px-6 py-12">
-
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-
-            <div>
-              <h3 className="text-4xl font-bold text-green-500">
-                500+
-              </h3>
-
-              <p className="text-slate-400 mt-2">
-                E-Books
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-4xl font-bold text-green-500">
-                25K+
-              </h3>
-
-              <p className="text-slate-400 mt-2">
-                Students
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-4xl font-bold text-green-500">
-                4.9★
-              </h3>
-
-              <p className="text-slate-400 mt-2">
-                Rating
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-4xl font-bold text-green-500">
-                100%
-              </h3>
-
-              <p className="text-slate-400 mt-2">
-                Digital Access
-              </p>
-            </div>
-
+      <div className="border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+          <div className="grid sm:grid-cols-4 gap-8 text-center">
+            {[
+              { value: "500+", label: "E-Books" },
+              { value: "25K+", label: "Students" },
+              { value: "4.9★", label: "Rating" },
+              { value: "100%", label: "Digital Access" },
+            ].map((stat) => (
+              <div key={stat.label}>
+                <h3 className="text-3xl font-bold text-forest-200">{stat.value}</h3>
+                <p className="text-forest-100/60 text-sm mt-1">{stat.label}</p>
+              </div>
+            ))}
           </div>
-
         </div>
-
       </div>
 
-      {/* Bottom */}
-
-      <div className="border-t border-slate-800">
-
-        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center">
-
-          <p className="text-slate-500 text-sm">
+      <div className="border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-forest-100/50 text-sm">
             © 2026 StudyBooks. All Rights Reserved.
           </p>
-
-          <div className="flex gap-8 text-slate-500 text-sm mt-4 md:mt-0">
-
-            <span className="hover:text-white cursor-pointer transition">
-              Privacy Policy
-            </span>
-
-            <span className="hover:text-white cursor-pointer transition">
-              Terms & Conditions
-            </span>
-
-            <span className="hover:text-white cursor-pointer transition">
-              Refund Policy
-            </span>
-
+          <div className="flex gap-6 text-forest-100/50 text-sm">
+            <span className="hover:text-white cursor-pointer transition">Privacy Policy</span>
+            <span className="hover:text-white cursor-pointer transition">Terms & Conditions</span>
+            <span className="hover:text-white cursor-pointer transition">Refund Policy</span>
           </div>
-
         </div>
-
       </div>
-
     </footer>
   );
 }

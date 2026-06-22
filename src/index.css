@@ -2,8 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background: #f7f3ec;
-  color: #111827;
-  font-family: "Inter", sans-serif;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #FAF7F2;
+    color: #0f172a;
+    font-family: "Inter", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  .section-heading {
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight;
+  }
+
+  .section-subheading {
+    @apply text-slate-500 text-lg mt-4 max-w-2xl leading-relaxed;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-forest-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg shadow-forest-500/20 hover:bg-forest-400 transition-all duration-300 hover:shadow-xl hover:shadow-forest-500/30 hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 border-2 border-forest-500 text-forest-500 px-6 py-3 rounded-full font-semibold hover:bg-forest-500 hover:text-white transition-all duration-300;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 border border-slate-200 bg-white text-slate-700 px-6 py-3 rounded-full font-medium hover:border-forest-400 hover:text-forest-500 transition-all duration-300;
+  }
+
+  .premium-card {
+    @apply bg-white rounded-3xl border border-slate-100 shadow-card hover:shadow-card-hover transition-all duration-300;
+  }
+
+  .input-premium {
+    @apply w-full outline-none px-4 py-3.5 rounded-2xl border border-slate-200 bg-white text-slate-800 placeholder:text-slate-400 focus:border-forest-400 focus:ring-2 focus:ring-forest-400/20 transition;
+  }
+
+  .badge-green {
+    @apply inline-flex items-center bg-forest-50 text-forest-500 text-xs font-semibold px-3 py-1 rounded-full;
+  }
 }

@@ -12,6 +12,7 @@ import {
   FaClock,
   FaMobileAlt,
   FaTimes,
+  FaCheck,
 } from "react-icons/fa";
 
 export default function BookDetail() {
@@ -24,186 +25,150 @@ export default function BookDetail() {
   const book = books.find((b) => b.id === Number(id));
 
   if (!book) {
-    return <h1 className="text-center py-20">Book Not Found</h1>;
+    return (
+      <>
+        <Navbar />
+        <div className="min-h-screen bg-cream-100 flex items-center justify-center px-4">
+          <div className="premium-card p-12 text-center max-w-md">
+            <h1 className="text-2xl font-bold text-slate-900">Book Not Found</h1>
+            <p className="text-slate-500 mt-3">This book doesn&apos;t exist in our catalogue.</p>
+            <button onClick={() => navigate("/books")} className="btn-primary mt-6">
+              Browse Books
+            </button>
+          </div>
+        </div>
+        <Footer />
+      </>
+    );
   }
 
   const relatedBooks = books
     .filter((item) => item.id !== book.id)
     .slice(0, 4);
 
+  const features = [
+    { icon: FaShieldAlt, text: "Watermarked, single-device read" },
+    { icon: FaClock, text: "6-month access from purchase" },
+    { icon: FaMobileAlt, text: "Resume across devices" },
+    { icon: FaTimes, text: "No download · No print" },
+  ];
+
   return (
     <>
       <Navbar />
 
       {showNotification && (
-        <div className="fixed top-20 right-6 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2 z-50 animate-pulse">
-          <FaShoppingCart />
+        <div className="fixed top-24 right-6 z-50 bg-forest-500 text-white px-6 py-3 rounded-2xl shadow-premium flex items-center gap-2 animate-fade-up">
+          <FaCheck />
           Added to cart!
         </div>
       )}
 
-      <div className="bg-[#F8F7F4] min-h-screen">
-        <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="bg-cream-100 min-h-screen">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-12">
 
-          <div className="grid lg:grid-cols-[420px_1fr_360px] gap-10">
+          <div className="grid lg:grid-cols-[380px_1fr_340px] gap-8 lg:gap-10">
 
             {/* LEFT IMAGE */}
             <div>
-              <img
-                src={book.image}
-                alt={book.title}
-                className="w-full h-[650px] object-cover rounded-3xl shadow-lg"
-              />
+              <div className="premium-card overflow-hidden">
+                <img
+                  src={book.image}
+                  alt={book.title}
+                  className="w-full h-[400px] lg:h-[520px] object-cover"
+                />
+              </div>
 
-              <h3 className="font-bold text-2xl mt-6">
-                Preview Pages
-              </h3>
-
+              <h3 className="font-bold text-lg mt-6 text-slate-900">Preview Pages</h3>
               <div className="grid grid-cols-3 gap-3 mt-4">
-                <img
-                  src={book.image}
-                  alt=""
-                  className="rounded-xl h-28 object-cover"
-                />
-                <img
-                  src={book.image}
-                  alt=""
-                  className="rounded-xl h-28 object-cover"
-                />
-                <img
-                  src={book.image}
-                  alt=""
-                  className="rounded-xl h-28 object-cover"
-                />
+                {[0, 1, 2].map((i) => (
+                  <div key={i} className="premium-card overflow-hidden cursor-pointer hover:ring-2 hover:ring-forest-400 transition">
+                    <img
+                      src={book.image}
+                      alt=""
+                      className="h-24 object-cover w-full"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
 
             {/* CENTER CONTENT */}
             <div>
+              <span className="badge-green">{book.category} • {book.subject}</span>
 
-              <p className="uppercase tracking-[4px] text-gray-500 text-sm">
-                {book.category} • {book.subject}
-              </p>
-
-              <h1 className="text-5xl font-extrabold text-slate-900 mt-3 leading-tight">
+              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mt-4 leading-tight">
                 {book.title}
               </h1>
 
-              <p className="text-2xl text-gray-600 mt-3">
-                by {book.author}
-              </p>
+              <p className="text-xl text-slate-500 mt-3">by {book.author}</p>
 
               <div className="flex flex-wrap items-center gap-4 mt-6">
-
-                <div className="flex items-center gap-2">
-                  <FaStar className="text-green-700" />
-                  <span>{book.rating}</span>
+                <div className="flex items-center gap-1.5">
+                  <FaStar className="text-amber-400" />
+                  <span className="font-semibold text-slate-700">{book.rating}</span>
                 </div>
-
-                <span className="text-gray-500">
-                  1,320 Reviews
-                </span>
-
-                <span className="text-gray-500">
-                  320 Pages
-                </span>
-
-                <span className="text-gray-500">
-                  {book.language}
-                </span>
-
-                <span className="bg-green-100 text-green-700 px-4 py-2 rounded-full font-medium">
-                  Preview 12 Pages
-                </span>
-
+                <span className="text-slate-400 text-sm">1,320 Reviews</span>
+                <span className="text-slate-400 text-sm">320 Pages</span>
+                <span className="text-slate-400 text-sm">{book.language}</span>
+                <span className="badge-green">Preview 12 Pages</span>
               </div>
 
-              <div className="flex gap-8 mt-10 border-b pb-5">
-                <button className="font-bold text-slate-900 border-b-4 border-green-700 pb-3">
+              <div className="flex gap-6 mt-8 border-b border-slate-200 pb-4">
+                <button className="font-bold text-forest-500 border-b-2 border-forest-500 pb-3">
                   About
                 </button>
-
-                <button className="text-gray-500">
+                <button className="text-slate-400 pb-3 hover:text-slate-600 transition">
                   Contents
                 </button>
-
-                <button className="text-gray-500">
+                <button className="text-slate-400 pb-3 hover:text-slate-600 transition">
                   Reviews
                 </button>
               </div>
 
-              <div className="mt-8 text-gray-700 leading-10 text-xl">
-
+              <div className="mt-6 text-slate-600 leading-relaxed space-y-4">
                 <p>
-                  This comprehensive e-book is specially designed
-                  for students preparing for competitive examinations.
-                  It covers theory, practice questions, mock tests,
-                  previous year papers and exam strategies.
+                  This comprehensive e-book is specially designed for students
+                  preparing for competitive examinations. It covers theory, practice
+                  questions, mock tests, previous year papers and exam strategies.
                 </p>
-
-                <p className="mt-6">
-                  Each chapter contains detailed explanations,
-                  solved examples and exam-oriented content that
-                  helps students improve performance.
+                <p>
+                  Each chapter contains detailed explanations, solved examples and
+                  exam-oriented content that helps students improve performance.
                 </p>
-
               </div>
 
-              {/* AUTHOR */}
-              <div className="mt-12 bg-white rounded-3xl p-8 border">
-
-                <p className="uppercase tracking-[4px] text-gray-400 text-sm">
+              <div className="mt-10 premium-card p-6 md:p-8">
+                <p className="text-xs uppercase tracking-[0.3em] text-slate-400 font-semibold">
                   About The Author
                 </p>
-
-                <h3 className="text-3xl font-bold mt-3">
-                  {book.author}
-                </h3>
-
-                <p className="text-gray-600 mt-4 leading-8">
-                  Experienced educator and author with years of
-                  expertise in preparing students for competitive
-                  examinations across India.
+                <h3 className="text-2xl font-bold text-slate-900 mt-3">{book.author}</h3>
+                <p className="text-slate-500 mt-3 leading-relaxed">
+                  Experienced educator and author with years of expertise in
+                  preparing students for competitive examinations across India.
                 </p>
-
               </div>
-
             </div>
 
             {/* RIGHT CARD */}
-            <div className="w-full max-w-[340px] mx-auto lg:mx-0">
-
-              <div className="bg-white rounded-[2rem] border border-slate-200 shadow-xl shadow-slate-200/40 p-6 sticky top-24">
-
-                <div className="flex flex-wrap items-center gap-3 border-b border-slate-200 pb-5">
-                  <div className="flex-1 min-w-[160px]">
-                    <h2 className="text-4xl font-bold text-slate-900">
-                      ₹{book.price}
-                    </h2>
-                  </div>
-
-                  <div className="flex items-center gap-2">
-                    <span className="line-through text-slate-400 text-xl">
-                      ₹{book.price + 250}
-                    </span>
-                    <span className="bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full text-sm font-semibold">
-                      40% Off
-                    </span>
-                  </div>
+            <div className="lg:sticky lg:top-24 lg:self-start">
+              <div className="premium-card p-6 shadow-card-hover">
+                <div className="flex flex-wrap items-center gap-3 border-b border-slate-100 pb-5">
+                  <h2 className="text-3xl font-bold text-slate-900">₹{book.price}</h2>
+                  <span className="line-through text-slate-400">₹{book.price + 250}</span>
+                  <span className="badge-green !bg-emerald-100 !text-emerald-700">40% Off</span>
                 </div>
 
-                <p className="text-slate-500 mt-4 text-sm">
-                  Inclusive of GST
-                </p>
+                <p className="text-slate-400 mt-3 text-sm">Inclusive of GST</p>
 
                 <button
                   onClick={() => {
                     addToCart(book);
                     navigate(`/checkout/${book.id}`);
                   }}
-                  className="w-full mt-6 bg-emerald-700 text-white py-3 rounded-full text-lg font-semibold hover:bg-emerald-800 transition"
+                  className="w-full mt-5 btn-primary !py-3.5 !text-base"
                 >
-                  Buy now
+                  Buy Now
                 </button>
 
                 <button
@@ -212,62 +177,36 @@ export default function BookDetail() {
                     setShowNotification(true);
                     setTimeout(() => setShowNotification(false), 2000);
                   }}
-                  className="w-full mt-3 border border-slate-200 bg-white text-slate-900 py-3 rounded-full text-lg font-medium flex items-center justify-center gap-2 hover:bg-slate-50 transition shadow-sm"
+                  className="w-full mt-3 btn-ghost !py-3.5 flex items-center justify-center gap-2"
                 >
                   <FaShoppingCart />
-                  Add to cart
+                  Add to Cart
                 </button>
 
-                <div className="border-t border-slate-200 mt-7 pt-7 space-y-4 text-slate-700">
-
-                  <div className="flex items-center gap-3">
-                    <FaShieldAlt />
-                    Watermarked, single-device read
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    <FaClock />
-                    6-month access from purchase
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    <FaMobileAlt />
-                    Resume across devices
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    <FaTimes />
-                    No download · No print
-                  </div>
-
+                <div className="border-t border-slate-100 mt-6 pt-6 space-y-4">
+                  {features.map((f) => (
+                    <div key={f.text} className="flex items-center gap-3 text-slate-600 text-sm">
+                      <f.icon className="text-forest-400 shrink-0" />
+                      {f.text}
+                    </div>
+                  ))}
                 </div>
-
               </div>
-
             </div>
-
           </div>
 
           {/* RELATED BOOKS */}
-          <div className="mt-24">
-
-            <h2 className="text-4xl font-bold mb-10">
-              Related Books
+          <div className="mt-16 md:mt-24">
+            <h2 className="section-heading mb-8">
+              Related{" "}
+              <span className="font-display italic text-forest-400">books</span>
             </h2>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {relatedBooks.map((item) => (
-                <BookCard
-                  key={item.id}
-                  book={item}
-                />
+                <BookCard key={item.id} book={item} />
               ))}
-
             </div>
-
           </div>
-
         </div>
       </div>
 
